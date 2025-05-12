@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import com.StudCourReg.app.Service.StudentService;
 import com.StudCourReg.app.models.Student;
 
+// for new commit
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -53,6 +54,10 @@ public class StudentController {
         studentService.deleteStudent(id);
         return new ResponseEntity<>("Student record deleted",HttpStatus.OK);
     }
+
+
+
+    
     
 }
 

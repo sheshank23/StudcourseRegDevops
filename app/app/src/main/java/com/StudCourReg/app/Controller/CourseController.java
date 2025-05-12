@@ -1,0 +1,34 @@
+package com.StudCourReg.app.Controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
+import com.StudCourReg.app.Service.CourseService;
+// import com.StudCourReg.app.models.Course;
+import com.StudCourReg.app.models.Course;
+
+
+@RestController
+@RequestMapping("/course")
+@RequiredArgsConstructor
+public class CourseController {
+    private final CourseService courseService;
+
+    @GetMapping("getCourses")
+    public List<Course> getCourses() {
+        return courseService.getAllCourses();
+    }
+    
+    //  private final CourseService courseService;
+    @GetMapping("getByCourseCode/{coursecode}")
+    public List<Course> getMethodName(@PathVariable String coursecode) {
+        
+        return courseService.findByCourseCode(coursecode);
+    }
+    
+}

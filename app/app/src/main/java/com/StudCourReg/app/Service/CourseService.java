@@ -30,4 +30,8 @@ public class CourseService {
     return repo.findByCourseCode(coursecode);
     }
 
+     public Course createCourse(Course course) {
+        return repo.save(course);
+    }
+
 }

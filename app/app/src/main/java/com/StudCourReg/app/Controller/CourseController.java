@@ -19,6 +19,12 @@ import com.StudCourReg.app.models.Course;
 public class CourseController {
     private final CourseService courseService;
 
+    @PostMapping("createCourse")
+    public ResponseEntity<Course> createStudent(@RequestBody Course course) {
+        Course createdCourse = courseService.createCourse(course);
+        return new ResponseEntity<>(createdCourse, HttpStatus.CREATED);
+    }
+
     @GetMapping("getCourses")
     public List<Course> getCourses() {
         return courseService.getAllCourses();
